@@ -8,7 +8,7 @@
     "name": "Wanjun Gu",
     "email": "wanjun.gu@ucsf.edu"
   },
-  "icon": "assets/logo.png",
+  "icon": "assets/icon.png",
   "server": {
     "type": "python",
     "entry_point": "server/main.py",
