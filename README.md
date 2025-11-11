@@ -3,7 +3,7 @@
 
 MCP-compliant R code execution and management agent for Claude Desktop Extension.
 
-Empower R programming with Model Context Protocol.
+TidyFlow aims to empower R programming with Model Context Protocol.
 
 ## Overview
 
@@ -21,6 +21,10 @@ Empower R programming with Model Context Protocol.
 - **Sandboxed file operations** for safety  
 
 ## Installation (No Dependencies Needed)
+
+### Step 0. Download and set up Claude Desktop
+
+Download [Claude Desktop](https://www.claude.com/download), and then set up and log in following instructions.
 
 ### Step 1: Download `TidyFlow.mcpb`
 
@@ -42,6 +46,11 @@ To streamline your workflow:
 3. Find **“TidyFlow”**  
 4. Enable **“Allow tools to run without permission”** (Auto-approve)  
 5. Restart Claude Desktop  
+
+To make the tool more powerful:
+
+1. Open **Settings → Capabilities → Code execution and file creation**
+2. Enable this option to gain improved performance
 
 ## Usage Examples
 
@@ -205,5 +214,4 @@ Special thanks to **Beniamin Krupkin** and **Sara Smith** for the inspiration of
 ## License
 
 MIT
-
 
