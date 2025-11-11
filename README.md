@@ -1,5 +1,5 @@
 
-# TidyBrain <img src="assets/logo.png" align="right" alt="TidyBrain Logo" width="200"/>
+# TidyBrain <img src="assets/logo.png" align="right" alt="TidyBrain Logo" width="150"/>
 
 MCP-compliant R code execution and management agent for Claude Desktop Extension.
 
