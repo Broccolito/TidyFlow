@@ -1,9 +1,9 @@
 {
   "manifest_version": "0.2",
-  "name": "TidyFlow",
+  "name": "TidyBrain",
   "version": "1.0.0",
   "description": "MCP-compliant R code execution and management agent for Claude Desktop",
-  "long_description": "TidyFlow empowers R programming with Model Context Protocol. It allows Claude to generate, execute, and manage R scripts within a user-specified directory. It provides a complete workflow for statistical programming and data analysis through natural language interaction, including script management, workspace persistence, object inspection, and publication-quality ggplot2 visualization.",
+  "long_description": "TidyBrain empowers R programming with Model Context Protocol. It allows Claude to generate, execute, and manage R scripts within a user-specified directory. It provides a complete workflow for statistical programming and data analysis through natural language interaction, including script management, workspace persistence, object inspection, and publication-quality ggplot2 visualization.",
   "author": {
     "name": "Wanjun Gu",
     "email": "wanjun.gu@ucsf.edu"
@@ -28,7 +28,7 @@
     },
     {
       "name": "get_state",
-      "description": "Get current TidyFlow state and configuration"
+      "description": "Get current TidyBrain state and configuration"
     },
     {
       "name": "create_r_file",
@@ -140,7 +140,7 @@
     "Data Analysis",
     "ggplot2",
     "MCP",
-    "TidyFlow"
+    "TidyBrain"
   ],
   "license": "MIT"
 }

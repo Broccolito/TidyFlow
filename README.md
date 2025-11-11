@@ -1,13 +1,13 @@
 
-# TidyFlow <img src="assets/logo.png" align="right" alt="TidyFlow Logo" width="200"/>
+# TidyBrain <img src="assets/logo.png" align="right" alt="TidyBrain Logo" width="200"/>
 
 MCP-compliant R code execution and management agent for Claude Desktop Extension.
 
-TidyFlow aims to empower R programming with Model Context Protocol.
+TidyBrain aims to empower R programming with Model Context Protocol.
 
 ## Overview
 
-**TidyFlow** is an MCP (Model Context Protocol) server that allows Claude to generate, execute, and manage R scripts within a user-specified directory. It provides a complete workflow for statistical programming and data analysis through natural language interaction — no manual setup required.
+**TidyBrain** is an MCP (Model Context Protocol) server that allows Claude to generate, execute, and manage R scripts within a user-specified directory. It provides a complete workflow for statistical programming and data analysis through natural language interaction — no manual setup required.
 
 ## Features
 
@@ -26,13 +26,13 @@ TidyFlow aims to empower R programming with Model Context Protocol.
 
 Download [Claude Desktop](https://www.claude.com/download), and then set up and log in following instructions.
 
-### Step 1: Download `TidyFlow.mcpb`
+### Step 1: Download `TidyBrain.mcpb`
 
-Simply download the latest **`TidyFlow.mcpb`** file from this repository or release page.
+Simply download the latest **`TidyBrain.mcpb`** file from this repository or release page.
 
 ### Step 2: Install in Claude Desktop
 
-1. Locate the downloaded `TidyFlow.mcpb` file  
+1. Locate the downloaded `TidyBrain.mcpb` file  
 2. Double-click the file  
 3. Claude Desktop will open and prompt to install  
 4. Follow the on-screen instructions  
@@ -43,7 +43,7 @@ To streamline your workflow:
 
 1. Open Claude Desktop  
 2. Go to **Settings → Extensions → MCP Servers**  
-3. Find **“TidyFlow”**  
+3. Find **“TidyBrain”**  
 4. Enable **“Allow tools to run without permission”** (Auto-approve)  
 5. Restart Claude Desktop  
 
@@ -54,7 +54,7 @@ To make the tool more powerful:
 
 ## Usage Examples
 
-Once installed, you can interact with `TidyFlow` using natural language.  
+Once installed, you can interact with `TidyBrain` using natural language.  
 Here are common commands and workflows:
 
 ### Common Commands
@@ -197,10 +197,10 @@ You: Run everything and show the results
 
 ## Technical Details
 
-- **Extension file:** `TidyFlow.mcpb`  
+- **Extension file:** `TidyBrain.mcpb`  
 - **Protocol:** MCP (Model Context Protocol) 1.0+  
 - **R Execution:** via Rscript  
-- **Session Persistence:** `.tidyflow` directory for state  
+- **Session Persistence:** `.tidybrain` directory for state  
 - **Security:** Sandboxed file operations  
 
 ## Acknowledgments

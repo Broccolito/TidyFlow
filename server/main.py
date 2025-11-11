@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-TidyFlow: MCP-compliant R code execution and management agent
+TidyBrain: MCP-compliant R code execution and management agent
 Purpose: Generate, execute, and manage R scripts within a user-specified directory
 Requirements: Python 3.8+, MCP SDK, R runtime (Rscript in PATH)
 """
@@ -99,7 +99,7 @@ ggsave("plot.png", p, width=5, height=4, dpi=800)
 - Humanize variable names in labels
 """
 
-class TidyFlowServer:
+class TidyBrainServer:
     def __init__(self):
         self.state_dir = None
         self.state_file = None
@@ -273,7 +273,7 @@ class TidyFlowServer:
                 }
             
             self.workdir = workdir
-            self.state_dir = workdir / ".TidyFlow"
+            self.state_dir = workdir / ".TidyBrain"
             self.state_dir.mkdir(exist_ok=True)
             self.state_file = self.state_dir / "state.json"
             
@@ -1075,11 +1075,11 @@ if(length(obj_list) > 0) {{
 
 async def main():
     """Main entry point"""
-    logger.info("Starting TidyFlow MCP server...")
+    logger.info("Starting TidyBrain MCP server...")
     
     # Create server instance
-    server = Server("TidyFlow")
-    TidyFlow = TidyFlowServer()
+    server = Server("TidyBrain")
+    TidyBrain = TidyBrainServer()
     
     # Register list_tools handler
     @server.list_tools()
@@ -1088,7 +1088,7 @@ async def main():
         return [
             Tool(name="set_workdir", description="Set the working directory for all R operations", 
                  inputSchema={"type": "object", "properties": {"path": {"type": "string"}, "create": {"type": "boolean", "default": True}}, "required": ["path"]}),
-            Tool(name="get_state", description="Get current TidyFlow state and configuration", 
+            Tool(name="get_state", description="Get current TidyBrain state and configuration", 
                  inputSchema={"type": "object", "properties": {}}),
             Tool(name="create_r_file", description="Create a new R script file", 
                  inputSchema={"type": "object", "properties": {"filename": {"type": "string"}, "overwrite": {"type": "boolean", "default": False}, "scaffold": {"type": "boolean", "default": True}}, "required": ["filename"]}),
@@ -1126,37 +1126,37 @@ async def main():
         logger.debug(f"Calling tool: {name} with arguments: {arguments}")
         try:
             if name == "set_workdir":
-                result = await TidyFlow.handle_set_workdir(**arguments)
+                result = await TidyBrain.handle_set_workdir(**arguments)
             elif name == "get_state":
-                result = await TidyFlow.handle_get_state()
+                result = await TidyBrain.handle_get_state()
             elif name == "create_r_file":
-                result = await TidyFlow.handle_create_r_file(**arguments)
+                result = await TidyBrain.handle_create_r_file(**arguments)
             elif name == "rename_r_file":
-                result = await TidyFlow.handle_rename_r_file(**arguments)
+                result = await TidyBrain.handle_rename_r_file(**arguments)
             elif name == "set_primary_file":
-                result = await TidyFlow.handle_set_primary_file(**arguments)
+                result = await TidyBrain.handle_set_primary_file(**arguments)
             elif name == "append_r_code":
-                result = await TidyFlow.handle_append_r_code(**arguments)
+                result = await TidyBrain.handle_append_r_code(**arguments)
             elif name == "write_r_code":
-                result = await TidyFlow.handle_write_r_code(**arguments)
+                result = await TidyBrain.handle_write_r_code(**arguments)
             elif name == "run_r_script":
-                result = await TidyFlow.handle_run_r_script(**arguments)
+                result = await TidyBrain.handle_run_r_script(**arguments)
             elif name == "run_r_expression":
-                result = await TidyFlow.handle_run_r_expression(**arguments)
+                result = await TidyBrain.handle_run_r_expression(**arguments)
             elif name == "list_exports":
-                result = await TidyFlow.handle_list_exports(**arguments)
+                result = await TidyBrain.handle_list_exports(**arguments)
             elif name == "read_export":
-                result = await TidyFlow.handle_read_export(**arguments)
+                result = await TidyBrain.handle_read_export(**arguments)
             elif name == "preview_table":
-                result = await TidyFlow.handle_preview_table(**arguments)
+                result = await TidyBrain.handle_preview_table(**arguments)
             elif name == "ggplot_style_check":
-                result = await TidyFlow.handle_ggplot_style_check(**arguments)
+                result = await TidyBrain.handle_ggplot_style_check(**arguments)
             elif name == "inspect_r_objects":
-                result = await TidyFlow.handle_inspect_r_objects(**arguments)
+                result = await TidyBrain.handle_inspect_r_objects(**arguments)
             elif name == "which_r":
-                result = await TidyFlow.handle_which_r()
+                result = await TidyBrain.handle_which_r()
             elif name == "list_r_files":
-                result = await TidyFlow.handle_list_r_files()
+                result = await TidyBrain.handle_list_r_files()
             else:
                 result = {"ok": False, "error": {"code": "UNKNOWN_TOOL", "message": f"Unknown tool: {name}"}}
             
